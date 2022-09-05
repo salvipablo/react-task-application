@@ -14,4 +14,4 @@ export const tasks = [
     title: 'Consumo de api',
     description: 'Traer datos de api basica'
   }
-]
+];
