@@ -6,6 +6,7 @@ export const TaskContext = createContext();
 
 export function TaskContextProvider(props) {
   const [tasks, setTasks] = useState([]);
+  let [newIdTask, setNewIdTask ] = useState(4);
 
   useEffect(() => {
     setTasks(data);
@@ -13,10 +14,11 @@ export function TaskContextProvider(props) {
 
   function createTask(task) {
     setTasks([...tasks, {
-      id: tasks.length + 1,
+      id: newIdTask,
       title: task.title,
       description: task.description
     }]);
+    setNewIdTask(newIdTask = newIdTask + 1);
   }
 
   function deleteTask(taskId) {
